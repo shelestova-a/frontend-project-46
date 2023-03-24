@@ -1,0 +1,71 @@
+---
+
+plugins:
+  - import
+
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
+env:
+  node: true
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:import/recommended'
+
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: latest
+  sourceType: module
+
+rules: {
+  "no-console": 0,
+  import/extensions: [ 
+    error,
+    ignorePackages,
+    js: always,
+  ],
+  "import/prefer-default-export": "off",
+  "comma-dangle": ["error", {
+  "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "always-multiline",
+  }],
+  "comma-style": [2, "last"],
+  "curly": [2, "multi-line"],
+  "eol-last": [2, "always"],
+  "eqeqeq": [2, "allow-null"],
+  "func-call-spacing": 2,
+  "indent": [2, 2],
+  "keyword-spacing": ["error", {
+  "before": true,
+  "after": true,
+   "overrides": {
+    "return": { "after": true },
+    "throw": { "after": true },
+    "case": { "after": true }
+    }
+    }],
+        "max-len": 0,
+        "no-cond-assign": [2, "always"],
+        "no-return-assign": [2, "always"],
+        "no-var": 2,
+        "object-curly-spacing": [2, "always"],
+        "object-shorthand": ["error", "always", {
+            "ignoreConstructors": false,
+            "avoidQuotes": true,
+        }],
+        "one-var": [2, "never"],
+        "prefer-const": 2,
+        "quotes": [2, "single", {
+            "allowTemplateLiterals": true,
+            "avoidEscape": true,
+        }],
+        "semi": [2, "always"],
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always",
+        }],
+}
