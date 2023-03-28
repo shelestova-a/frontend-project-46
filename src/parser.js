@@ -1,6 +1,6 @@
 import yaml from 'js-yaml';
 
-const getParsedObject = (content, exten) => {
+const parse = (content, exten) => {
   let objectParsed;
   if (exten.toLowerCase() === 'json') {
     objectParsed = JSON.parse(content);
@@ -10,4 +10,4 @@ const getParsedObject = (content, exten) => {
   return objectParsed;
 };
 
-export default getParsedObject;
+export default parse;
