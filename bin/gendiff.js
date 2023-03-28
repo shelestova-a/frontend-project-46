@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import genDiff from '../src/genDiff.js';
-import getParsedData from '../src/index.js';
+import genDiff from '../src/index.js';
 
 const program = new Command();
 
@@ -14,9 +13,7 @@ program
   .version('0.0.1', '-V, --version', 'output the version number')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    const object1 = getParsedData(filepath1);
-    const object2 = getParsedData(filepath2);
-    const result = genDiff(object1, object2);
+    const result = genDiff(filepath1, filepath2);
     console.log(result);
   })
   .parse();
