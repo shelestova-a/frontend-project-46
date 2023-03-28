@@ -1,14 +1,12 @@
-import fs from 'fs';
+import read from './reader.js';
+import parse from './parser.js';
+import genDiff from './genDiff.js';
 
-import path from 'path';
-
-import getParsedObject from './parser.js';
-
-const getParsedData = (filepath) => {
-  const pathAbsolute = path.resolve(filepath);
-  const content = fs.readFileSync(pathAbsolute, 'utf-8');
-  const exten = filepath.split('.').pop();
-  return getParsedObject(content, exten);
+export default (filepath1, filepath2) => {
+  const extension1 = filepath1.split('.').pop();
+  const objectParsed1 = parse(read(filepath1), extension1);
+  const extension2 = filepath2.split('.').pop();
+  const objectParsed2 = parse(read(filepath2), extension2);
+  const result = genDiff(objectParsed1, objectParsed2);
+  return result;
 };
-
-export default getParsedData;
