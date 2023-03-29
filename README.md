@@ -4,3 +4,43 @@
 <a href="https://codeclimate.com/github/shelestova-a/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/995f5ceae7e3051bf95b/maintainability" /></a>
 
 <a href="https://codeclimate.com/github/shelestova-a/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/995f5ceae7e3051bf95b/test_coverage" /></a>
+
+<h1 align="center">Difference Generator</h1>
+
+
+<h2 align="center">About the Project</h2>
+
+## Project description
+The semantic JSON and YAML compare tool. 
+
+
+
+Utility Features:
+- Supporting different input formats: yaml, json
+- Generating a report in the form of plain text, stylish and json
+
+
+## Project set up
+<ol>
+  <li><p>clone the repository from GitHub.com</p>
+<p><code>git clone https://github.com/shelestova-a/js-starter-project-44.git</code></p></li>
+<li><p>reproduce the environment for the project inside the module’s root folder</p>
+<p><code>npm ci</code></p></li> or <p><code>make install</code></p></li>
+<li><p>access the help</p>
+<p><code>gendiff -h</code></p></li>
+<li><p>compare files</p>
+<p><code>gendiff <filepath1> <filepath2></code></p></li>
+</ol>
+
+
+## How to access the help
+<p><code>gendiff -h</code></p>
+<a href="https://asciinema.org/a/572167?autoplay=1"><img src="https://asciinema.org/a/572167.png" width="600"/></a>
+
+## How to compare files
+<p><code>gendiff <filepath1> <filepath2></code></p></li>
+Comparison of flat files (JSON):
+<a href="https://asciinema.org/a/572170?autoplay=1"><img src="https://asciinema.org/a/572170.png" width="600"/></a>
+
+Comparison of flat files (YAML):
+<a href="https://asciinema.org/a/572172?autoplay=1"><img src="https://asciinema.org/a/572172.png" width="600"/></a>
