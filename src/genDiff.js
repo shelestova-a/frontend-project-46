@@ -7,23 +7,25 @@ const genDiff = (object1, object2) => {
   const arrayTotSort = _.sortBy(arrayTot, 0);
 
   const result = arrayTotSort.reduce((acc, [key, value]) => {
-    if (!Object.hasOwn(object1, key)) {
-      acc += `  + ${key}: ${value}\n`;
-    } else if (!Object.hasOwn(object2, key)) {
-      acc += `  - ${key}: ${value}\n`;
-    } else if ((object1[key] !== value) && (object2[key] === value)) {
-      acc += `  + ${key}: ${value}\n`;
-    } else if ((object2[key] !== value) && (object1[key] === value)) {
-      acc += `  - ${key}: ${value}\n`;
+    if (!(key in object1)) {
+      acc[`+ ${key}`] = value;
+    } else if (!(key in object2)) {
+      acc[`- ${key}`] = value;
+    } else if (object1[key] !== value && object2[key] === value) {
+      acc[`+ ${key}`] = value;
+    } else if (object2[key] !== value && object1[key] === value) {
+      acc[`- ${key}`] = value;
     } else {
-      if (!acc.includes(`    ${key}: ${value}\n`)) {
-        acc += `    ${key}: ${value}\n`;
+      if (!(key in acc) || acc[key] !== value) {
+        acc[`  ${key}`] = value;
       }
     }
     return acc;
-  }, '{\n');
+  }, {});
 
-  return `${result}}`;
+  const resultStr = Object.entries(result).map(([key, value]) => `  ${key}: ${value}`).join('\n');
+
+  return `{\n${resultStr}\n}`;
 };
 
 export default genDiff;
