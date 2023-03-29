@@ -26,10 +26,6 @@ Utility Features:
 <p><code>git clone https://github.com/shelestova-a/js-starter-project-44.git</code></p></li>
 <li><p>reproduce the environment for the project inside the module’s root folder</p>
 <p><code>npm ci</code></p></li> or <p><code>make install</code></p></li>
-<li><p>access the help</p>
-<p><code>gendiff -h</code></p></li>
-<li><p>compare files</p>
-<p><code>gendiff <filepath1> <filepath2></code></p></li>
 </ol>
 
 
@@ -38,7 +34,7 @@ Utility Features:
 <a href="https://asciinema.org/a/572167?autoplay=1"><img src="https://asciinema.org/a/572167.png" width="600"/></a>
 
 ## How to compare files
-<p><code>gendiff <filepath1> <filepath2></code></p></li>
+<p><code>gendiff filepath1 filepath2</code></p></li>
 Comparison of flat files (JSON):
 <a href="https://asciinema.org/a/572170?autoplay=1"><img src="https://asciinema.org/a/572170.png" width="600"/></a>
 
