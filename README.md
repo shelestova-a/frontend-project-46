@@ -1,4 +1,4 @@
-### Hexlet tests and linter status:
+### GitHub Action Check Runs and linter status:
 [![Actions Status](https://github.com/shelestova-a/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/shelestova-a/frontend-project-46/actions)
 
 <a href="https://codeclimate.com/github/shelestova-a/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/995f5ceae7e3051bf95b/maintainability" /></a>
@@ -40,3 +40,9 @@ Comparison of flat files (JSON):
 
 Comparison of flat files (YAML):
 <a href="https://asciinema.org/a/572172?autoplay=1"><img src="https://asciinema.org/a/572172.png" width="600"/></a>
+
+Comparison of nested files (JSON):
+<a href="https://asciinema.org/a/574241?autoplay=1"><img src="https://asciinema.org/a/574241.png" width="600"/></a>
+
+Comparison of nested files (YAML):
+<a href="https://asciinema.org/a/574243?autoplay=1"><img src="https://asciinema.org/a/574243.png" width="600"/></a>
