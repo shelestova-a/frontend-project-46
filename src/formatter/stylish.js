@@ -1,18 +1,18 @@
 import _ from 'lodash';
 
-const getCurrentIdent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount - 2);
-const getBracketIdent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount - spacesCount);
+const getCurrentIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount - 2);
+const getBracketIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount - spacesCount);
 
 const stringify = (value, depth = 1) => {
-  const iter = (currentValue, depth1) => {
+  const iter = (currentValue, iterDepth) => {
     if (!_.isObject(currentValue) || currentValue === null) {
-      return `${currentValue}`;
+      return typeof currentValue === 'string' ? `${currentValue}` : currentValue;
     }
-    const currentIndent = getCurrentIdent(depth1);
-    const bracketIndent = getBracketIdent(depth1);
+    const currentIndent = getCurrentIndent(iterDepth);
+    const bracketIndent = getBracketIndent(iterDepth);
     const arr = _.sortBy(Object.entries(currentValue), 0);
 
-    const lines = arr.map(([key, val]) => `${currentIndent}${key}: ${iter(val, depth + 1)}`);
+    const lines = arr.map(([key, val]) => `${currentIndent}  ${key}: ${iter(val, iterDepth + 1)}`);
     return ['{', ...lines, `${bracketIndent}}`].join('\n');
   };
 
@@ -21,8 +21,8 @@ const stringify = (value, depth = 1) => {
 
 const makeStylish = (tree) => {
   const iter = (object, depth = 1) => {
-    const currentIndent = getCurrentIdent(depth);
-    const bracketIndent = getBracketIdent(depth);
+    const currentIndent = getCurrentIndent(depth);
+    const bracketIndent = getBracketIndent(depth);
     const result = object.flatMap((node) => {
       switch (node.status) {
         case 'nested':
