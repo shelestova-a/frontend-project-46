@@ -7,17 +7,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const fileJSON1 = getFixturePath('file1.json');
-const fileJSON2 = getFixturePath('file2.json');
+const fileNestedJSON1 = getFixturePath('file1Nested.json');
+const fileNestedJSON2 = getFixturePath('file2Nested.json');
 
-const fileYAML1 = getFixturePath('file1.yaml');
-const fileYAML2 = getFixturePath('file2.yaml');
+const fileNestedYAML1 = getFixturePath('file1Nested.yaml');
+const fileNestedYAML2 = getFixturePath('file2Nested.yaml');
 
-const result = fs.readFileSync(getFixturePath('expected'), 'utf-8');
+const resultNested = fs.readFileSync(getFixturePath('expectedNested'), 'utf-8');
 
 const testData = [
-  { file1: fileJSON1, file2: fileJSON2, expected: result },
-  { file1: fileYAML1, file2: fileYAML2, expected: result },
+  { file1: fileNestedJSON1, file2: fileNestedJSON2, expected: resultNested },
+  { file1: fileNestedYAML1, file2: fileNestedYAML2, expected: resultNested },
 ];
 
 test.each(testData)('genDiff', ({ file1, file2, expected }) => {
