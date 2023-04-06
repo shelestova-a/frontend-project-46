@@ -1,25 +1,35 @@
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
-import genDiff from '../src/index.js';
+import getFormatted from '../src/formatter/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const fileNestedJSON1 = getFixturePath('file1Nested.json');
-const fileNestedJSON2 = getFixturePath('file2Nested.json');
+const fileNestedJSON1 = getFixturePath('file1.json');
+const fileNestedJSON2 = getFixturePath('file2.json');
 
-const fileNestedYAML1 = getFixturePath('file1Nested.yaml');
-const fileNestedYAML2 = getFixturePath('file2Nested.yaml');
+const fileNestedYAML1 = getFixturePath('file1.yaml');
+const fileNestedYAML2 = getFixturePath('file2.yaml');
 
-const resultNested = fs.readFileSync(getFixturePath('expectedNested'), 'utf-8');
+const resultStylish = fs.readFileSync(getFixturePath('expectedStylish'), 'utf-8');
+const resultPlain = fs.readFileSync(getFixturePath('expectedPlain'), 'utf-8');
 
-const testData = [
-  { file1: fileNestedJSON1, file2: fileNestedJSON2, expected: resultNested },
-  { file1: fileNestedYAML1, file2: fileNestedYAML2, expected: resultNested },
+const testDataStylish = [
+  { file1: fileNestedJSON1, file2: fileNestedJSON2, expected: resultStylish },
+  { file1: fileNestedYAML1, file2: fileNestedYAML2, expected: resultStylish },
 ];
 
-test.each(testData)('genDiff', ({ file1, file2, expected }) => {
-  expect(genDiff(file1, file2)).toEqual(expected);
+test.each(testDataStylish)('test gendiff stylish output', ({ file1, file2, expected }) => {
+  expect(getFormatted(file1, file2)).toEqual(expected);
+});
+
+const testDataPlain = [
+  { file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'plain', expected: resultPlain },
+  { file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'plain', expected: resultPlain },
+];
+
+test.each(testDataPlain)('test gendiff plain output', ({ file1, file2, format, expected }) => {
+  expect(getFormatted(file1, file2, format)).toEqual(expected);
 });
