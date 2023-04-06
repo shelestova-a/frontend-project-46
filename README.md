@@ -41,8 +41,14 @@ Comparison of flat files (JSON):
 Comparison of flat files (YAML):
 <a href="https://asciinema.org/a/572172?autoplay=1"><img src="https://asciinema.org/a/572172.png" width="600"/></a>
 
-Comparison of nested files (JSON):
-<a href="https://asciinema.org/a/574241?autoplay=1"><img src="https://asciinema.org/a/574241.png" width="600"/></a>
+Comparison of nested files (JSON) with stylish output:
+<a href="https://asciinema.org/a/575168?autoplay=1"><img src="https://asciinema.org/a/575168.png" width="600"/></a>
 
-Comparison of nested files (YAML):
-<a href="https://asciinema.org/a/574243?autoplay=1"><img src="https://asciinema.org/a/574243.png" width="600"/></a>
+Comparison of nested files (YAML) with stylish output:
+<a href="https://asciinema.org/a/575167?autoplay=1"><img src="https://asciinema.org/a/575167.png" width="600"/></a>
+
+Comparison of nested files (JSON) with plain output:
+<a href="https://asciinema.org/a/575161?autoplay=1"><img src="https://asciinema.org/a/575161.png" width="600"/></a>
+
+Comparison of nested files (YAML) with plain output:
+<a href="https://asciinema.org/a/575166?autoplay=1"><img src="https://asciinema.org/a/575166.png" width="600"/></a>
