@@ -14,7 +14,7 @@ gendiff:
 	node bin/gendiff.js
 
 test:
-	npx jest
+	npx jest --colors --runInBand --bail
 
 test-coverage:
 	npx jest --coverage
