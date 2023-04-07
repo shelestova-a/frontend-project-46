@@ -52,3 +52,9 @@ Comparison of nested files (JSON) with plain output:
 
 Comparison of nested files (YAML) with plain output:
 <a href="https://asciinema.org/a/575166?autoplay=1"><img src="https://asciinema.org/a/575166.png" width="600"/></a>
+
+Comparison of nested files (JSON) with json output:
+<a href="https://asciinema.org/a/575368?autoplay=1"><img src="https://asciinema.org/a/575368.png" width="600"/></a>
+
+Comparison of nested files (YAML) with json output:
+<a href="https://asciinema.org/a/575369?autoplay=1"><img src="https://asciinema.org/a/575369.png" width="600"/></a>
