@@ -3,7 +3,7 @@ const checkComplexity = (value) => {
     return value;
   }
   if (typeof value === 'object') {
-    return `[complex value]`;
+    return '[complex value]';
   }
   if (typeof value === 'string') {
     return `'${value}'`;
