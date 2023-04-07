@@ -12,7 +12,7 @@ const makeJSON = (tree) => {
     }, []).join(',');
     return result;
   };
-  return `{${iter(tree)}}`;
+  return `${iter(tree)}`;
 };
 
 export default makeJSON;
