@@ -22,24 +22,36 @@ const testDataStylish = [
   { file1: fileNestedYAML1, file2: fileNestedYAML2, expected: resultStylish },
 ];
 
-test.each(testDataStylish)('test gendiff stylish output', ({ file1, file2, expected }) => {
+test.each(testDataStylish)('check gendiff stylish output', ({ file1, file2, expected }) => {
   expect(getFormatted(file1, file2)).toEqual(expected);
 });
 
 const testDataPlain = [
-  { file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'plain', expected: resultPlain },
-  { file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'plain', expected: resultPlain },
+  {
+    file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'plain', expected: resultPlain,
+  },
+  {
+    file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'plain', expected: resultPlain,
+  },
 ];
 
-test.each(testDataPlain)('test gendiff plain output', ({ file1, file2, format, expected }) => {
+test.each(testDataPlain)('check gendiff plain output', ({
+  file1, file2, format, expected,
+}) => {
   expect(getFormatted(file1, file2, format)).toEqual(expected);
 });
 
 const testDataJSON = [
-  { file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'json', expected: resultJSON },
-  { file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'json', expected: resultJSON },
+  {
+    file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'json', expected: resultJSON,
+  },
+  {
+    file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'json', expected: resultJSON,
+  },
 ];
 
-test.each(testDataJSON)('test gendiff json output', ({ file1, file2, format, expected }) => {
+test.each(testDataJSON)('check gendiff json output', ({
+  file1, file2, format, expected,
+}) => {
   expect(getFormatted(file1, file2, format)).toEqual(expected);
 });

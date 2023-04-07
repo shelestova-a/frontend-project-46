@@ -35,9 +35,9 @@ const makeStylish = (tree) => {
           return `${currentIndent}  ${node.key}: ${stringify(node.value, depth + 1)}`;
         case 'modified':
           return [`${currentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}`,
-          `${currentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`];
+            `${currentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`];
         default:
-        throw new Error(`Unknown status: '${node.status}'!`);
+          throw new Error(`Unknown status: '${node.status}'!`);
       }
     });
     return ['{', ...result, `${bracketIndent}}`].join('\n');

@@ -7,7 +7,8 @@ const getFormatted = (filepath1, filepath2, formatter = 'stylish') => {
   const diffTree = getDiffTree(filepath1, filepath2);
   if (formatter === 'plain') {
     return makePlain(diffTree);
-  } else if (formatter === 'json') {
+  }
+  if (formatter === 'json') {
     return makeJSON(diffTree);
   }
   return makeStylish(diffTree);

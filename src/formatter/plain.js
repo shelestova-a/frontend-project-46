@@ -1,9 +1,11 @@
 const checkComplexity = (value) => {
   if (value === null) {
     return value;
-  } else if (typeof value === 'object') {
+  }
+  if (typeof value === 'object') {
     return `[complex value]`;
-  } else if (typeof value === 'string') {
+  }
+  if (typeof value === 'string') {
     return `'${value}'`;
   }
   return value;
@@ -31,7 +33,7 @@ const makePlain = (tree) => {
           case 'modified':
             return `Property '${pathToCurrentProperty}' was updated. From ${checkComplexity(node.value1)} to ${checkComplexity(node.value2)}`;
           default:
-          throw new Error(`Unknown status: '${node.status}'!`);
+            throw new Error(`Unknown status: '${node.status}'!`);
         }
       });
     return result.join('\n');
