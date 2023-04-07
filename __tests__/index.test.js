@@ -15,6 +15,7 @@ const fileNestedYAML2 = getFixturePath('file2.yaml');
 
 const resultStylish = fs.readFileSync(getFixturePath('expectedStylish'), 'utf-8');
 const resultPlain = fs.readFileSync(getFixturePath('expectedPlain'), 'utf-8');
+const resultJSON = fs.readFileSync(getFixturePath('expectedJSON'), 'utf-8');
 
 const testDataStylish = [
   { file1: fileNestedJSON1, file2: fileNestedJSON2, expected: resultStylish },
@@ -31,5 +32,14 @@ const testDataPlain = [
 ];
 
 test.each(testDataPlain)('test gendiff plain output', ({ file1, file2, format, expected }) => {
+  expect(getFormatted(file1, file2, format)).toEqual(expected);
+});
+
+const testDataJSON = [
+  { file1: fileNestedJSON1, file2: fileNestedJSON2, format: 'json', expected: resultJSON },
+  { file1: fileNestedYAML1, file2: fileNestedYAML2, format: 'json', expected: resultJSON },
+];
+
+test.each(testDataJSON)('test gendiff json output', ({ file1, file2, format, expected }) => {
   expect(getFormatted(file1, file2, format)).toEqual(expected);
 });
