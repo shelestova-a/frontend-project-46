@@ -14,7 +14,7 @@ gendiff:
 	node bin/gendiff.js
 
 test:
-	npx  --experimental-vm-modules jest
+	npx jest
 
 test-coverage:
 	npx jest --coverage
