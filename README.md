@@ -1,6 +1,8 @@
 ### GitHub Action Check Runs and linter status:
 [![Actions Status](https://github.com/shelestova-a/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/shelestova-a/frontend-project-46/actions)
 
+[![Node CI](https://github.com/shelestova-a/frontend-project-46/actions/workflows/node-check.yml/badge.svg)](https://github.com/shelestova-a/frontend-project-46/actions/workflows/node-check.yml)
+
 <a href="https://codeclimate.com/github/shelestova-a/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/995f5ceae7e3051bf95b/maintainability" /></a>
 
 <a href="https://codeclimate.com/github/shelestova-a/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/995f5ceae7e3051bf95b/test_coverage" /></a>
