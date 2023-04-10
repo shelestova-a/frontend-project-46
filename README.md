@@ -15,11 +15,13 @@
 ## Project description
 The semantic JSON and YAML compare tool. 
 
-
-
 Utility Features:
 - Supporting different input formats: yaml, json
-- Generating a report in the form of plain text, stylish and json
+- Generating a report in the form of plain text, stylish and json formats
+
+
+## System requirements
+<img src="https://img.shields.io/badge/node-v19.2.0-green.svg">
 
 
 ## Project set up
@@ -37,26 +39,14 @@ Utility Features:
 
 ## How to compare files
 <p><code>gendiff filepath1 filepath2</code></p></li>
-Comparison of flat files (JSON):
+Comparison of flat files:
 <a href="https://asciinema.org/a/572170?autoplay=1"><img src="https://asciinema.org/a/572170.png" width="600"/></a>
 
-Comparison of flat files (YAML):
-<a href="https://asciinema.org/a/572172?autoplay=1"><img src="https://asciinema.org/a/572172.png" width="600"/></a>
-
-Comparison of nested files (JSON) with stylish output:
-<a href="https://asciinema.org/a/575168?autoplay=1"><img src="https://asciinema.org/a/575168.png" width="600"/></a>
-
-Comparison of nested files (YAML) with stylish output:
+Comparison of nested files with stylish output:
 <a href="https://asciinema.org/a/575167?autoplay=1"><img src="https://asciinema.org/a/575167.png" width="600"/></a>
 
-Comparison of nested files (JSON) with plain output:
+Comparison of nested files with plain output:
 <a href="https://asciinema.org/a/575161?autoplay=1"><img src="https://asciinema.org/a/575161.png" width="600"/></a>
 
-Comparison of nested files (YAML) with plain output:
-<a href="https://asciinema.org/a/575166?autoplay=1"><img src="https://asciinema.org/a/575166.png" width="600"/></a>
-
-Comparison of nested files (JSON) with json output:
+Comparison of nested files with json output:
 <a href="https://asciinema.org/a/575368?autoplay=1"><img src="https://asciinema.org/a/575368.png" width="600"/></a>
-
-Comparison of nested files (YAML) with json output:
-<a href="https://asciinema.org/a/575369?autoplay=1"><img src="https://asciinema.org/a/575369.png" width="600"/></a>
