@@ -1,16 +1,16 @@
 import _ from 'lodash';
 
 const genDiff = (object1, object2) => {
-  const array1 = Object.keys(object1);
-  const array2 = Object.keys(object2);
-  const arrayTot = _.union(array1, array2);
-  const arrayTotSort = _.sortBy(arrayTot);
-  const tree = arrayTotSort.map((key) => {
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+  const keysUnited = _.union(keys1, keys2);
+  const keysUnitedSorted = _.sortBy(keysUnited);
+  const tree = keysUnitedSorted.map((key) => {
     const value1 = object1[key];
     const value2 = object2[key];
 
     if (_.has(object1, key) && _.has(object2, key)) {
-      if (_.isObject(value1) && _.isObject(value2)) {
+      if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
         return { key, status: 'nested', children: genDiff(value1, value2) };
       }
       if (value1 === value2) {
