@@ -12,16 +12,17 @@
 
 <h2 align="center">About the Project</h2>
 
+
+## System requirements
+<img src="https://img.shields.io/badge/node-v19.2.0-green.svg">
+
+
 ## Project description
 The semantic JSON and YAML compare tool. 
 
 Utility Features:
 - Supporting different input formats: yaml, json
 - Generating a report in the form of plain text, stylish and json formats
-
-
-## System requirements
-<img src="https://img.shields.io/badge/node-v19.2.0-green.svg">
 
 
 ## Project set up
