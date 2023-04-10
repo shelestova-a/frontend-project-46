@@ -17,6 +17,7 @@
 <img src="https://img.shields.io/badge/node-v19.2.0-green.svg">
 
 
+
 ## Project description
 The semantic JSON and YAML compare tool. 
 
