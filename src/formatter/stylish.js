@@ -5,7 +5,7 @@ const getBracketIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.re
 
 const stringify = (value, depth = 1) => {
   const iter = (currentValue, iterDepth) => {
-    if (!_.isObject(currentValue) || currentValue === null) {
+    if (!_.isPlainObject(currentValue) || currentValue === null) {
       return `${currentValue}`;
     }
     const currentIndent = getCurrentIndent(iterDepth);
