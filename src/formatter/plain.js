@@ -1,8 +1,7 @@
+import _ from 'lodash';
+
 const checkComplexity = (value) => {
-  if (value === null) {
-    return value;
-  }
-  if (typeof value === 'object') {
+  if (_.isObject(value)) {
     return '[complex value]';
   }
   if (typeof value === 'string') {
