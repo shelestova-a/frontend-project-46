@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
-import getFormatted from '../src/formatter/index.js';
+import genDiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +13,6 @@ describe.each(['json', 'yaml'])('check gendiff for %s', (format) => {
 
   test.each(['stylish', 'plain', 'json'])('%s output', (outputFormat) => {
     const result = fs.readFileSync(getFixturePath(`${outputFormat}Result`), 'utf-8');
-    expect(getFormatted(file1, file2, outputFormat)).toEqual(result);
+    expect(genDiff(file1, file2, outputFormat)).toEqual(result);
   });
 });
