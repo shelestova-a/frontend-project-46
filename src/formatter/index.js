@@ -1,10 +1,8 @@
-import getDiffTree from '../index.js';
 import makePlain from './plain.js';
 import makeStylish from './stylish.js';
 import makeJSON from './json.js';
 
-const getFormatted = (filepath1, filepath2, formatter = 'stylish') => {
-  const diffTree = getDiffTree(filepath1, filepath2);
+const getFormatted = (diffTree, formatter = 'stylish') => {
   switch (formatter) {
     case 'stylish':
       return makeStylish(diffTree);

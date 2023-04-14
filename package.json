@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "The semantic JSON and YAML compare tool that generates a report in the form of plain text, stylish and json formats",
-  "main": "src/formatter/index.js",
+  "main": "src/index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
